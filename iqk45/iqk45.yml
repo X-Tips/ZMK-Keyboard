@@ -1,0 +1,8 @@
+file_format: "1"
+id: iqk45
+name: X.Tips Keyboard
+type: shield
+url: https://oshwhub.com/joba
+requires: [nrfmicro_13_52840]
+features:
+  - keys
