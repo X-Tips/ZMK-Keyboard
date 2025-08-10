@@ -20,7 +20,7 @@ When turned on, the blue LED flash through the small hole in the center of the p
 
 When charging, the red LED light is on. (Battery model: 803040).
 
-ZMK firmware and onboard E73 design, providing source code: https://github.com/X-Tips/X3n_Keyboard
+ZMK firmware and onboard E73 design, providing source code: https://github.com/X-Tips/ZMK-Keyboard
 
 Changing keys requires users to master the knowledge of modifying and compiling ZMK code themselves.
 
