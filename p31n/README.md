@@ -4,7 +4,7 @@ Keyboard Maintainer: X.Tips
 
 URL: www.umux.com
 
-电池开关在键盘底面，充电或使用蓝牙模式时，拨到小孔位置打开电源。（默认不含电池，可选加，电池规格601235）。
+电池开关在键盘底面，充电或使用蓝牙模式时，拨到小孔位置打开电源。（默认不含电池，可选加，电池规格501235）。
 
 采用ZMK固件、proMicro nrf52840模块设计，全键可编程，改键需要使用者自己掌握修改与编译代码的知识。
 
@@ -14,7 +14,7 @@ The battery switch is located on the bottom of the keyboard.
 
 When charging or using Bluetooth mode, slide it to the small hole position to turn on the power. 
 
-Batteries are not included by default but can be optionally added. The battery specification is 601235.
+Batteries are not included by default but can be optionally added. The battery specification is 501235.
 
 ZMK firmware and proMicro nrf52840coreboard design, providing source code: https://github.com/X-Tips/ZMK-Keyboard
 
