@@ -24,6 +24,25 @@
         };
       };
 
+	  // 新增：自定义 hold-tap 行为（设置长按识别时间）
+      behaviors {
+        // 定义一个用于 mod-tap 的行为（如 Shift、Ctrl 等修饰键）
+        my_mod_tap: my_mod_tap {
+          compatible = "zmk,behavior-hold-tap";
+          label = "MY_MOD_TAP";
+          #binding-cells = <2>;  // 固定参数（短按行为、长按行为）
+          hold-time = <120>;     // 长按识别时间（单位：ms，可修改为 150-300 等）
+        };
+
+        // 定义一个用于 layer-tap 的行为（切换层）
+        my_layer_tap: my_layer_tap {
+          compatible = "zmk,behavior-hold-tap";
+          label = "MY_LAYER_TAP";
+          #binding-cells = <2>;  // 固定参数（短按行为、长按行为）
+          hold-time = <120>;     // 层切换的长按识别时间（可与上面不同）
+        };
+      };
+
 	keymap0: keymap {
 		compatible = "zmk,keymap";
 
@@ -33,52 +52,52 @@
             // |   A   |   S   |   D   |   F   |   G   |    ----   |   H   |   J   |   K    |   L    |  Ent  |
             // | LG,Z  |  LA,X | LC,C  | LS,V  | LT1,B | LT3,SPACE | LT2,N | RS,M  | RS,TAb | RA,ESC | RG,BS | 
             bindings = <
-            &lt 4 Q      &kp W        &kp E         &kp R        &kp T      &none         &kp Y      &kp U         &kp I            &kp O          &kp P    
-            &mt LSHFT A  &kp S        &kp D         &kp F        &kp G      &none         &kp H      &kp J         &kp K            &kp L          &kp ENTER
-            &mt LCTRLZ   & X          &mt LWIN  C   &mt LALT V   &lt 1 B    &lt 2 SPACE   &lt 3 N    &mt RSHFT M   &mt RCTRL COMMA  &mt RALT DOT   &mt RWIN BSPC
+            &kp Q          &kp W          &kp E          &kp R          &kp T          &none          &kp Y          &kp U          &kp I          &kp O          &kp P
+			&mt LSHFT A    &kp S          &kp D          &kp F          &mt LSHFT G    &none          &kp H          &kp J          &kp K          &kp L          &kp ENTER
+			&mt LCTRL SLSH &mt LWIN Z     &mt LALT X     &lt 3 C        &lt 2 V        &lt 1 SPACE    &lt 2 B        &lt 3 N        &mt RALT M     &mt RWIN COMMA &mt RCTRL DOT
             >;
 		};
 		
 		fn1_layer {
 			//数字层
             bindings = <
-            &kp N1    &kp N2    &kp N3    &kp N4     &kp N5        &none          &kp N6           &kp N7        &kp N8         &kp N9         &kp N0          
-            &kp N4    &kp N5    &kp N6    &kp N0     &kp KP_MINUS  &none          &kp KP_SLASH     &kp HASH      &kp LBRC       &kp RBRC       &kp SEMI   
-            &kp N1    &kp N2    &kp N3    &kp BSPC   &to 0         &kp KP_ENTER   &kp BSLH         &kp AMPS      &kp LT         &kp GT         &kp SQT        
+            &kp N1         &kp N2         &kp N3         &kp N4         &kp N5         &none          &kp ESC        &kp MINUS      &kp EQUAL      &none          &kp BSPC
+			&kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &none          &kp TAB        &none          &none          &kp UP         &kp ENTER
+			&kp GRAVE      &kp LBRC       &kp RBRC       &kp SEMI       &none          &none          &none          &none          &kp LEFT       &kp DOWN       &kp RIGHT
              >;
 		};
 
 		fn2_layer {
 			//符号层
             bindings = <
-            &kp EXCLAM   &kp AT       &kp HASH  &kp DOLLAR   &kp PERCENT   &none          &kp CARET    &kp AMPERSAND   &kp ASTERISK   &kp LPAR     &kp RPAR      
-            &kp AT       &kp DQT      &kp EXCL  &kp QMARK    &kp LPAR      &none          &kp RPAR     &kp LEFT        &kp DOWN       &kp RIGHT    &kp PG_DN  
-            &kp LWIN     &kp LALT     &kp LCTRL &kp LSHFT    &kp EQUAL     &kp LG(SPACE)  &to 0        &kp CAPS        &kp TAB        &kp ESC      &kp DEL      
+			&kp EXCLAM     &kp AT         &kp HASH       &kp DOLLAR     &kp PERCENT    &none          &none          &kp UNDER      &kp PLUS       &none          &kp DEL
+			&kp CARET      &kp AMPERSAND  &kp ASTERISK   &kp LPAR       &kp RPAR       &none          &none          &none          &none          &kp UP         &kp ENTER
+			&kp TILDE      &kp LCURLY     &kp RCURLY     &kp COLON      &kp DQT        &none          &none          &none          &kp HOME       &kp DOWN       &kp END
             >;
 		};
 
 		fn3_layer {
 			//功能层
             bindings = <
-            &kp F1         &kp F2         &kp F3         &kp F4         &kp F5         &none   &kp F6         &kp F7   &kp F8    &kp F9    &kp F10    
-            &bt F11        &bt F12        &out OUT_BLE   &out OUT_USB   &kp C_PREV     &none   &kp C_NEXT     &kp F5   &kp F6    &kp F7    &kp F8    
-            &kp LWIN       &kp LALT       &kp LCTRL      &kp LSHFT      &kp C_PP       &to 0   &kp C_MUTE     &kp F1   &kp F2    &kp F3    &kp F4        
+			&kp F1         &kp F2         &kp F3         &kp F4         &kp F5         &none          &kp F11        &none          &none          &none          &kp DEL
+			&kp F6         &kp F7         &kp F8         &kp F9         &kp F10        &none          &kp F12        &none          &none          &kp UP         &kp ENTER
+			&none          &none          &none          &none          &none          &none          &none          &none          &kp HOME       &kp DOWN       &kp END
             >;
 		};
 		
 		fn4_layer {
             bindings = <
-            &to 0              &kp LS(LC(LA(W)))  &kp LS(LC(LA(E)))  &kp LS(LC(LA(R)))  &kp LS(LC(LA(T)))   &none   &kp LS(LC(LA(Y)))  &kp LS(LC(LA(U)))  &kp LS(LC(LA(I)))     &kp LS(LC(LA(O)))   &kp LS(LC(LA(P)))       
-            &kp LS(LC(LA(A)))  &kp LS(LC(LA(S)))  &kp LS(LC(LA(D)))  &kp LS(LC(LA(F)))  &kp LS(LC(LA(G)))   &none   &kp LS(LC(LA(H)))  &kp LS(LC(LA(J)))  &kp LS(LC(LA(K)))     &kp LS(LC(LA(L)))   &kp LS(LC(LA(ENTER)))   
-            &kp LS(LC(LA(Z)))  &kp LS(LC(LA(X)))  &kp LS(LC(LA(C)))  &kp LS(LC(LA(V)))  &kp LS(LC(LA(B)))   &mo 5   &kp LS(LC(LA(N)))  &kp LS(LC(LA(M)))  &kp LS(LC(LA(COMMA))) &kp LS(LC(LA(DOT))) &kp LS(LC(LA(BSPC)))        
+            &none   &none   &none   &none    &none   &none   &none   &none   &none   &none   &none  
+            &none   &none   &none   &none    &none   &none   &none   &none   &none   &none   &none  
+            &none   &none   &none   &none    &none   &none   &none   &none   &none   &none   &none      
             >;
 		};
 
 		fn5_layer {
             bindings = <
-            &kp LA(LG(Q))  &kp LA(LG(W))  &kp LA(LG(E))  &kp LA(LG(R))  &kp LA(LG(T))   &none   &kp LA(LG(Y))  &kp LA(LG(U))  &kp LA(LG(I))   &kp LA(LG(O))         &kp LA(LG(P))      
-            &kp LA(LG(A))  &kp LA(LG(S))  &kp LA(LG(D))  &kp LA(LG(F))  &kp LA(LG(G))   &none   &kp LA(LG(H))  &kp LA(LG(J))  &kp LA(LG(K))   &kp LA(LG(L))         &kp LA(LG(ENTER))  
-            &kp K_CMENU    &kp INS        &kp SLCK       &kp KP_NLCK    &kp PAUSE_BREAK &to 0   &kp PSCRN      &xtips         &bootloader     &kp LS(LC(LA(LBRC)))  &kp LS(LC(LA(RBRC)))     
+            &none   &none   &none   &none    &none   &none   &none   &none   &none   &none   &none  
+            &none   &none   &none   &none    &none   &none   &none   &none   &none   &none   &none  
+            &none   &none   &none   &none    &none   &none   &none   &none   &none   &none   &none      
             >;
 		};
 		
