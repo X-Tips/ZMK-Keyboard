@@ -4,17 +4,17 @@ Keyboard Maintainer: X.Tips
 
 URL: www.umux.com
 
-µç³Ø¿ª¹ØÔÚ¼üÅÌµ×Ãæ£¬³äµç»òÊ¹ÓÃÀ¶ÑÀÄ£Ê½Ê±£¬²¦µ½Ğ¡¿×Î»ÖÃ´ò¿ªµçÔ´¡££¨Ä¬ÈÏ²»º¬µç³Ø£¬¿ÉÑ¡¼Ó£¬µç³Ø¹æ¸ñ102035£©¡£
+ç”µæ± å¼€å…³åœ¨é”®ç›˜åº•é¢ï¼Œå……ç”µæˆ–ä½¿ç”¨è“ç‰™æ¨¡å¼æ—¶ï¼Œæ‹¨åˆ°å°å­”ä½ç½®æ‰“å¼€ç”µæºã€‚ï¼ˆé»˜è®¤ä¸å«ç”µæ± ï¼Œå¯é€‰åŠ ï¼Œç”µæ± è§„æ ¼902035ï¼‰ã€‚
 
-²ÉÓÃZMK¹Ì¼ş¡¢proMicro nrf52840Ä£¿éÉè¼Æ£¬È«¼ü¿É±à³Ì£¬¸Ä¼üĞèÒªÊ¹ÓÃÕß×Ô¼ºÕÆÎÕĞŞ¸ÄÓë±àÒë´úÂëµÄÖªÊ¶¡£
+é‡‡ç”¨ZMKå›ºä»¶ã€proMicro nrf52840æ¨¡å—è®¾è®¡ï¼Œå…¨é”®å¯ç¼–ç¨‹ï¼Œæ”¹é”®éœ€è¦ä½¿ç”¨è€…è‡ªå·±æŒæ¡ä¿®æ”¹ä¸ç¼–è¯‘ä»£ç çš„çŸ¥è¯†ã€‚
 
-ZMKÖªÊ¶Çë×ÔĞĞBÕ¾ËÑÊÓÆµ»òÍøÉÏËÑË÷×ÊÁÏÑ§Ï°£¬²»Ìá¹©¹ØÓÚZMKµÄ¼¼ÊõÖ§³Ö¡£
+ZMKçŸ¥è¯†è¯·è‡ªè¡ŒBç«™æœè§†é¢‘æˆ–ç½‘ä¸Šæœç´¢èµ„æ–™å­¦ä¹ ï¼Œä¸æä¾›å…³äºZMKçš„æŠ€æœ¯æ”¯æŒã€‚
 
 The battery switch is located on the bottom of the keyboard. 
 
 When charging or using Bluetooth mode, slide it to the small hole position to turn on the power. 
 
-Batteries are not included by default but can be optionally added. The battery specification is 102035.
+Batteries are not included by default but can be optionally added. The battery specification is 902035.
 
 ZMK firmware and proMicro nrf52840coreboard design, providing source code: https://github.com/X-Tips/ZMK-Keyboard
 
