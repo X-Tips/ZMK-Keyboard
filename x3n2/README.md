@@ -4,18 +4,18 @@ Keyboard Maintainer: X.Tips
 
 URL: www.umux.com
 
-µç³Ø¿ª¹ØÔÚ¼üÅÌtypec²å×ùµ×ÏÂ£¬³äµç»òÊ¹ÓÃÀ¶ÑÀÄ£Ê½Ê±£¬²¦µ½×ó±ß´ò¿ªµçÔ´¡£
+ç”µæ± å¼€å…³åœ¨é”®ç›˜typecæ’åº§åº•ä¸‹ï¼Œå……ç”µæˆ–ä½¿ç”¨è“ç‰™æ¨¡å¼æ—¶ï¼Œæ‹¨åˆ°å·¦è¾¹æ‰“å¼€ç”µæºã€‚
 
-²ÉÓÃZMK¹Ì¼ş¡¢proMicro nrf52840Ä£¿éÉè¼Æ£¬È«¼ü¿É±à³Ì£¬¸Ä¼üĞèÒªÊ¹ÓÃÕß×Ô¼ºÕÆÎÕĞŞ¸ÄÓë±àÒë´úÂëµÄÖªÊ¶¡£
+é‡‡ç”¨ZMKå›ºä»¶ã€proMicro nrf52840æ¨¡å—è®¾è®¡ï¼Œå…¨é”®å¯ç¼–ç¨‹ï¼Œæ”¹é”®éœ€è¦ä½¿ç”¨è€…è‡ªå·±æŒæ¡ä¿®æ”¹ä¸ç¼–è¯‘ä»£ç çš„çŸ¥è¯†ã€‚
 
-ZMKÖªÊ¶Çë×ÔĞĞBÕ¾ËÑÊÓÆµ»òÍøÉÏËÑË÷×ÊÁÏÑ§Ï°£¬²»Ìá¹©¹ØÓÚZMKµÄ¼¼ÊõÖ§³Ö¡£
+ZMKçŸ¥è¯†è¯·è‡ªè¡ŒBç«™æœè§†é¢‘æˆ–ç½‘ä¸Šæœç´¢èµ„æ–™å­¦ä¹ ï¼Œä¸æä¾›å…³äºZMKçš„æŠ€æœ¯æ”¯æŒã€‚
 
-The battery switch is located on the bottom of the keyboard. 
+The battery switch is located under the Type-C socket on the keyboard.
 
-When charging or using Bluetooth mode, slide it to the small hole position to turn on the power. 
+When charging or using Bluetooth mode, turn on the power. 
 
-ZMK firmware and proMicro nrf52840coreboard design, providing source code: https://github.com/X-Tips/ZMK-Keyboard
+ZMK firmware and proMicro nrf52840coreboard design, providing source code: https://github.com/X-Tips/ZMK-Keyboard.
 
-Changing keys requires users to master the knowledge of modifying and compiling ZMK code themselves.
+Changing keymaps requires users to master the knowledge of modifying and compiling ZMK code themselves.
 
 Please search for videos or knowledge about ZMK to learn. We do not provide technical support for ZMK.
