@@ -21,3 +21,8 @@ ZMK firmware and proMicro nrf52840coreboard design, providing source code: https
 Changing keys requires users to master the knowledge of modifying and compiling ZMK code themselves.
 
 Please search for videos or knowledge about ZMK to learn. We do not provide technical support for ZMK.
+
+
+
+The keymap has a Bootloader button—press it once to enter bootloader mode. 
+Alternatively, open the back cover and quickly short Reset and GND twice to enter bootloader mode.
