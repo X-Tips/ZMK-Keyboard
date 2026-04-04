@@ -1,14 +1,16 @@
 # X.Tips · ZMK Firmware
 
 > 两种进入**DFU**的方法:
-- keymap里设置了Bootloader按键，按一下即可进入bl状态；也可以打开后盖，快速短接两次Reset和gnd，进入bl。
+- keymap里设置了Bootloader按键，按一下即可进入bl状态；
+- 也可以打开后盖，快速短接两次Reset和gnd，进入bl。
 
 > 2 ways to enter the **DFU**:
-- The keymap has a Bootloader button—press it once to enter bootloader mode. Alternatively, open the back cover and quickly short Reset and GND twice to enter bootloader mode.
+- The keymap has a Bootloader button—press it once to enter bootloader mode.
+- Alternatively, open the back cover and quickly short Reset and GND twice to enter bootloader mode.
 
 
 -----------------------
-# X.Tips · ZMK 固件
+# X.Tips
 
 > 愿小键盘给你带来大快乐
 
@@ -16,8 +18,6 @@
 两年闲鱼 80+产品，**2700+ 单**，500+ 粉丝，L6升L7。不靠营销，只靠口碑。
 https://www.goofish.com/personal?userId=137976734
 
-
-# X.Tips · ZMK Firmware
 
 > May a small keyboard bring you great joy
 
