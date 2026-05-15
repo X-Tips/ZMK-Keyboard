@@ -2,7 +2,11 @@ file_format: "1"
 id: x3n
 name: X.Tips X3n Keyboard
 type: shield
+<<<<<<< HEAD
 url: http://:www.umux.com
+=======
+url: http://www.umux.com
+>>>>>>> 83aead19a16974034217203c8b5b25b5a5f5a76e
 requires: [nrfmicro_13_52840]
 features:
   - keys
