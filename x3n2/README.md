@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ﻿X.Tips X3n2 Keyboard
-=======
-X.Tips X3n2 Keyboard
->>>>>>> 83aead19a16974034217203c8b5b25b5a5f5a76e
 
 Keyboard Maintainer: X.Tips
 
@@ -23,7 +19,6 @@ ZMK firmware and proMicro nrf52840coreboard design, providing source code: https
 Changing keymaps requires users to master the knowledge of modifying and compiling ZMK code themselves.
 
 Please search for videos or knowledge about ZMK to learn. We do not provide technical support for ZMK.
-<<<<<<< HEAD
  
 
 
@@ -32,10 +27,3 @@ Please search for videos or knowledge about ZMK to learn. We do not provide tech
 keymap里设置了Bootloader按键，按一下即可进入bl状态；也可以打开后盖，快速短接两次Reset和gnd，进入bl。
 
 The keymap has a Bootloader button—press it once to enter bootloader mode. Alternatively, open the back cover and quickly short Reset and GND twice to enter bootloader mode.
-=======
-
-
-
-keymap里设置了Bootloader按键，按一下即可进入bl状态；也可以打开后盖，快速短接两次Reset和gnd，进入bl。
-The keymap has a Bootloader button—press it once to enter bootloader mode. Alternatively, open the back cover and quickly short Reset and GND twice to enter bootloader mode.
->>>>>>> 83aead19a16974034217203c8b5b25b5a5f5a76e
