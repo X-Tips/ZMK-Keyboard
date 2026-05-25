@@ -1,5 +1,0 @@
-# Copyright (c) 2020 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-config SHIELD_x3n2
-	def_bool $(shields_list_contains,x3n2)
