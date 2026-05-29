@@ -1,6 +1,6 @@
 file_format: "1"
-id: x36n
-name: X.Tips X36n Keyboard
+id: x35n
+name: X.Tips X35n Keyboard
 type: shield
 url: http://www.umux.com
 requires: [nrfmicro_13_52840]
