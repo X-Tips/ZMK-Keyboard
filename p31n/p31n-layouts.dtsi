@@ -9,31 +9,28 @@
         transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
-            // 第0行（10个键，位置5空缺）
             = <&key_physical_attrs 100 100    0    0       0     0     0>
             , <&key_physical_attrs 100 100  100    0       0     0     0>
             , <&key_physical_attrs 100 100  200    0       0     0     0>
             , <&key_physical_attrs 100 100  300    0       0     0     0>
             , <&key_physical_attrs 100 100  400    0       0     0     0>
-            // 位置5空缺（500,0）没有按键
             , <&key_physical_attrs 100 100  600    0       0     0     0>
             , <&key_physical_attrs 100 100  700    0       0     0     0>
             , <&key_physical_attrs 100 100  800    0       0     0     0>
             , <&key_physical_attrs 100 100  900    0       0     0     0>
             , <&key_physical_attrs 100 100 1000    0       0     0     0>
-            // 第1行（10个键，位置5空缺）
+
             , <&key_physical_attrs 100 100    0  100       0     0     0>
             , <&key_physical_attrs 100 100  100  100       0     0     0>
             , <&key_physical_attrs 100 100  200  100       0     0     0>
             , <&key_physical_attrs 100 100  300  100       0     0     0>
             , <&key_physical_attrs 100 100  400  100       0     0     0>
-            // 位置5空缺（500,100）没有按键
             , <&key_physical_attrs 100 100  600  100       0     0     0>
             , <&key_physical_attrs 100 100  700  100       0     0     0>
             , <&key_physical_attrs 100 100  800  100       0     0     0>
             , <&key_physical_attrs 100 100  900  100       0     0     0>
             , <&key_physical_attrs 100 100 1000  100       0     0     0>
-            // 第2行（11个键，完整）
+
             , <&key_physical_attrs 100 100    0  200       0     0     0>
             , <&key_physical_attrs 100 100  100  200       0     0     0>
             , <&key_physical_attrs 100 100  200  200       0     0     0>
