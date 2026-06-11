@@ -6,3 +6,4 @@ url: http://www.umux.com
 requires: [nrfmicro_13_52840]
 features:
   - keys
+  - studio
