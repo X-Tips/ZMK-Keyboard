@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       shield:
-        description: '要编译的护盾名称'
+        description: '要编译的护盾名称 - shield'
         required: true
         type: choice
         options:
@@ -14,7 +14,7 @@ on:
           - x36n
           - x3n2
       board:
-        description: '主控型号'
+        description: '主控型号 - board'
         required: true
         default: 'nrfmicro/nrf52840/zmk'
         type: string
