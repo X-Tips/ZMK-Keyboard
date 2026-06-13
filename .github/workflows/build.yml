@@ -1,0 +1,56 @@
+name: Build ZMK Firmware
+
+on:
+  workflow_dispatch:
+    inputs:
+      shield:
+        description: '要编译的护盾名称'
+        required: true
+        type: choice
+        options:
+          - p31n
+          - p48n
+          - x35n
+          - x36n
+          - x3n2
+      board:
+        description: '主控型号'
+        required: true
+        default: 'nrfmicro/nrf52840/zmk'
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: zmkfirmware/zmk-build-arm:stable
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize west workspace
+        run: |
+          west init -l config/
+          west update
+          west zephyr-export
+
+      - name: Link custom shields
+        run: |
+          mkdir -p /__w/ZMK-Keyboard/ZMK-Keyboard/zmk/app/boards/shields/
+          ln -sf /__w/ZMK-Keyboard/ZMK-Keyboard/${{ github.event.inputs.shield }} /__w/ZMK-Keyboard/ZMK-Keyboard/zmk/app/boards/shields/${{ github.event.inputs.shield }}
+
+      - name: Build firmware
+        run: |
+          west build -s zmk/app -b ${{ github.event.inputs.board }} -d build \
+            -S studio-rpc-usb-uart \
+            -- -DSHIELD=${{ github.event.inputs.shield }} -DCONFIG_ZMK_STUDIO=y
+
+      - name: Set safe name
+        run: |
+          SAFE_NAME=$(echo "${{ github.event.inputs.shield }}-${{ github.event.inputs.board }}" | tr '/' '_')
+          echo "SAFE_NAME=$SAFE_NAME" >> $GITHUB_ENV
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SAFE_NAME }}
+          path: build/zephyr/zmk.uf2
