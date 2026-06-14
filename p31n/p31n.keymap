@@ -30,7 +30,7 @@
         default_layer {
             bindings = <
             &lt 4 Q      &kp W        &kp E         &kp R        &kp T               &kp Y      &kp U         &kp I            &kp O          &lt 6 P
-            &studio_unlock        &kp S        &kp D         &kp F        &kp G               &kp H      &kp J         &kp K            &kp L          &kp ENTER
+            &kp A        &kp S        &kp D         &kp F        &kp G               &kp H      &kp J         &kp K            &kp L          &kp ENTER
             &mt LWIN Z   &mt LALT X   &mt LCTRL C   &mt LSHFT V  &lt 1 B    &lt 3 SPACE   &lt 2 N    &mt RSHFT M   &mt RCTRL COMMA  &mt RALT DOT   &mt RWIN BSPC
             >;
         };

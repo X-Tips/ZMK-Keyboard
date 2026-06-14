@@ -36,8 +36,8 @@ jobs:
 
       - name: Link custom shields
         run: |
-          mkdir -p /__w/ZMK-Studio/ZMK-Studio/zmk/app/boards/shields/
-          ln -sf /__w/ZMK-Studio/ZMK-Studio/${{ github.event.inputs.shield }} /__w/ZMK-Studio/ZMK-Studio/zmk/app/boards/shields/${{ github.event.inputs.shield }}
+          mkdir -p /__w/ZMK-Keyboard/ZMK-Keyboard/zmk/app/boards/shields/
+          ln -sf /__w/ZMK-Keyboard/ZMK-Keyboard/${{ github.event.inputs.shield }} /__w/ZMK-Keyboard/ZMK-Keyboard/zmk/app/boards/shields/${{ github.event.inputs.shield }}
 
       - name: Build firmware
         run: |
