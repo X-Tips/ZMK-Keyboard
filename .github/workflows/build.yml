@@ -28,16 +28,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      # 调试：查看当前路径
-      - name: Debug - check paths
-        run: |
-          echo "=== GITHUB_WORKSPACE ==="
-          echo $GITHUB_WORKSPACE
-          echo "=== 当前目录 ==="
-          pwd
-          echo "=== 列出 /__w 目录 ==="
-          ls -la /__w/
-
       - name: Initialize west workspace
         run: |
           west init -l config/
