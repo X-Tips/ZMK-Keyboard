@@ -1,0 +1,82 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "p20n-layouts.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        diode-direction = "col2row";
+
+        // 采用col2row (20列1行) 或	row2col (1行20列)的方式，取消4148，
+        // 与直连相比降低每个按键占空比 ≈ 5%，最终降低功耗。
+        // 此模式适用小配列，电路更简单，功耗更低，但需更多的芯片引脚。
+
+        // 1行 - 作为输入，检测高电平，启用下拉电阻
+        row-gpios
+            = <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // 只有1行
+            ;
+
+        // 20列 - 作为输出，激活时输出高电平
+        col-gpios
+            = <&gpio0 6  GPIO_ACTIVE_HIGH>
+            , <&gpio0 8  GPIO_ACTIVE_HIGH>
+            , <&gpio0 17 GPIO_ACTIVE_HIGH>
+            , <&gpio0 20 GPIO_ACTIVE_HIGH>
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>
+            , <&gpio1 0  GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+            , <&gpio1 4  GPIO_ACTIVE_HIGH>
+            , <&gpio1 6  GPIO_ACTIVE_HIGH>
+            , <&gpio0 9  GPIO_ACTIVE_HIGH>
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>
+            , <&gpio1 11 GPIO_ACTIVE_HIGH>
+            , <&gpio1 13 GPIO_ACTIVE_HIGH>
+            , <&gpio1 15 GPIO_ACTIVE_HIGH>
+            , <&gpio0 2  GPIO_ACTIVE_HIGH>
+            , <&gpio0 29 GPIO_ACTIVE_HIGH>
+            , <&gpio0 31 GPIO_ACTIVE_HIGH>
+            , <&gpio1 2  GPIO_ACTIVE_HIGH>
+            , <&gpio1 7  GPIO_ACTIVE_HIGH>
+            ;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        rows = <1>;    // 1行
+        columns = <20>; // 20列
+        map = <
+            RC(0,0)   // 第1个按键 (列0)
+            RC(0,1)   // 第2个按键 (列1)
+            RC(0,2)   // 第3个按键 (列2)
+            RC(0,3)   // 第4个按键 (列3)
+            RC(0,4)   // 第5个按键 (列4)
+            RC(0,5)   // 第6个按键 (列5)
+            RC(0,6)   // 第7个按键 (列6)
+            RC(0,7)   // 第8个按键 (列7)
+            RC(0,8)   // 第9个按键 (列8)
+            RC(0,9)   // 第10个按键 (列9)
+            RC(0,10)  // 第11个按键 (列10)
+            RC(0,11)  // 第12个按键 (列11)
+            RC(0,12)  // 第13个按键 (列12)
+            RC(0,13)  // 第14个按键 (列13)
+            RC(0,14)  // 第15个按键 (列14)
+            RC(0,15)  // 第16个按键 (列15)
+            RC(0,16)  // 第17个按键 (列16)
+            RC(0,17)  // 第18个按键 (列17)
+            RC(0,18)  // 第19个按键 (列18)
+            RC(0,19)  // 第20个按键 (列19)
+        >;
+    };
+};

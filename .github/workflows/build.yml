@@ -28,6 +28,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      # 调试：查看当前路径
+      - name: Debug - check paths
+        run: |
+          echo "=== GITHUB_WORKSPACE ==="
+          echo $GITHUB_WORKSPACE
+          echo "=== 当前目录 ==="
+          pwd
+          echo "=== 列出 /__w 目录 ==="
+          ls -la /__w/
+
       - name: Initialize west workspace
         run: |
           west init -l config/
@@ -36,8 +46,8 @@ jobs:
 
       - name: Link custom shields
         run: |
-          mkdir -p ${{ github.workspace }}/zmk/app/boards/shields/
-          ln -sf ${{ github.workspace }}/${{ github.event.inputs.shield }} ${{ github.workspace }}/zmk/app/boards/shields/${{ github.event.inputs.shield }}
+          mkdir -p $GITHUB_WORKSPACE/zmk/app/boards/shields/
+          ln -sf $GITHUB_WORKSPACE/${{ github.event.inputs.shield }} $GITHUB_WORKSPACE/zmk/app/boards/shields/${{ github.event.inputs.shield }}
 
       - name: Build firmware
         run: |
