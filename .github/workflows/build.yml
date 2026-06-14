@@ -4,17 +4,18 @@ on:
   workflow_dispatch:
     inputs:
       shield:
-        description: '要编译的护盾名称 - shield'
+        description: '选择键盘 - select keyboard'
         required: true
         type: choice
         options:
+          - p20n
           - p31n
           - p48n
           - x35n
           - x36n
           - x3n2
       board:
-        description: '主控型号 - board'
+        description: '主控型号 - board model'
         required: true
         default: 'nrfmicro/nrf52840/zmk'
         type: string
@@ -25,7 +26,7 @@ jobs:
     container: zmkfirmware/zmk-build-arm:stable
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Initialize west workspace
         run: |
@@ -35,8 +36,8 @@ jobs:
 
       - name: Link custom shields
         run: |
-          mkdir -p /__w/ZMK-Keyboard/ZMK-Keyboard/zmk/app/boards/shields/
-          ln -sf /__w/ZMK-Keyboard/ZMK-Keyboard/${{ github.event.inputs.shield }} /__w/ZMK-Keyboard/ZMK-Keyboard/zmk/app/boards/shields/${{ github.event.inputs.shield }}
+          mkdir -p /__w/ZMK-Studio/ZMK-Studio/zmk/app/boards/shields/
+          ln -sf /__w/ZMK-Studio/ZMK-Studio/${{ github.event.inputs.shield }} /__w/ZMK-Studio/ZMK-Studio/zmk/app/boards/shields/${{ github.event.inputs.shield }}
 
       - name: Build firmware
         run: |
@@ -50,7 +51,7 @@ jobs:
           echo "SAFE_NAME=$SAFE_NAME" >> $GITHUB_ENV
 
       - name: Upload firmware
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ env.SAFE_NAME }}
           path: build/zephyr/zmk.uf2
