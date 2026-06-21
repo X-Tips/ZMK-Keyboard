@@ -20,7 +20,7 @@ URL: www.umux.com
 
 - 支持的键盘：p20n / p31n / p48n / x35n / x36n / x3n2
 - 在线改键位：连 USB 打开网站https://zmk.studio/， 实时修改，不用重新编译
-- 改代码刷机：使用github Actions方式编译固件
+- 改代码刷机：可安装本地编译环境，也可使用如下的github Actions方式编译固件
    1. 改键 - 编辑对应键盘的 .keymap 文件。
    2. 编译 - Actions → Run workflow → 选键盘型号。
    3. 下载 - 等待编译完成，下载 .uf2 文件。
@@ -32,7 +32,7 @@ URL: www.umux.com
 
 - Edit Keymap Online: Connect via USB and open https://zmk.studio/ – modify your keymap in real time, no need to recompile.
 
-- Flash via Code Editing (GitHub Actions):
+- You can build the firmware locally, or use the GitHub Actions workflow below.
 
    1. Edit keymap – Modify the .keymap file for your keyboard.
    2. Build – Go to Actions → Run workflow → Select your keyboard model.
