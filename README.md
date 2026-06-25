@@ -25,6 +25,7 @@ URL: www.umux.com
    2. 编译 - Actions → Run workflow → 选键盘型号。
    3. 下载 - 等待编译完成，下载 .uf2 文件。
    4. 刷入 - 连电脑后，按一下 Bootloader 键，或打开后盖按 Reset 两次，把 .uf2 拖进出现的 U 盘。
+- 注：也在Github Codespace的终端运行bash setup.sh安装ZMK编译环境来编辑生成固件。
 
 > **Edit Keymap**
 
@@ -38,3 +39,4 @@ URL: www.umux.com
    2. Build – Go to Actions → Run workflow → Select your keyboard model.
    3. Download – Wait for the build to finish, then download the .uf2 file.
    4. Flash – Connect to your computer，press the Bootloader key once, or open the back cover and press Reset twice. Drag and drop the .uf2 file into the USB drive that appears.
+- Alternatively, you can run `bash setup.sh` in the Github Codespace terminal to install the ZMK build environment for editing and generating firmware.

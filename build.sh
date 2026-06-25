@@ -11,7 +11,10 @@ if [ -z "$SHIELD_NAME" ]; then
     exit 1
 fi
 
-SHIELD_PATH="/workspaces/ZMK-Studio/$SHIELD_NAME"
+# 获取脚本所在目录（即配置仓库根目录）
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+SHIELD_PATH="$SCRIPT_DIR/$SHIELD_NAME"
 LINK_PATH="/workspaces/zmk/app/boards/shields/$SHIELD_NAME"
 BUILD_DIR="/workspaces/zmk/app/build_$SHIELD_NAME"
 OUTPUT_FILE="$SHIELD_PATH/${SHIELD_NAME}.uf2"
@@ -19,7 +22,7 @@ OUTPUT_FILE="$SHIELD_PATH/${SHIELD_NAME}.uf2"
 if [ ! -d "$SHIELD_PATH" ]; then
     echo "错误: 找不到键盘文件夹 $SHIELD_PATH"
     echo "可用的键盘:"
-    ls -d /workspaces/ZMK-Studio/*/ 2>/dev/null | xargs -n 1 basename
+    ls -d "$SCRIPT_DIR"/*/ 2>/dev/null | xargs -n 1 basename
     exit 1
 fi
 
