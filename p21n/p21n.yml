@@ -1,0 +1,8 @@
+file_format: "1"
+id: p21n
+name: X.P21n Keyboard
+type: shield
+url: http://www.umux.com
+requires: [nrfmicro_13_52840]
+features:
+  - keys
