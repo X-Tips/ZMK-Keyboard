@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "p31n-layouts.dtsi"
+#include "layouts.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
