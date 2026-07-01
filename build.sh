@@ -1,13 +1,21 @@
 #!/bin/bash
-# 用法: ./build.sh 键盘名
-# 示例: ./build.sh x35n
+# 用法: ./build.sh 键盘名 [-n]
+# 示例: ./build.sh x35n      # 编译支持 ZMK Studio 的固件（默认）
+# 示例: ./build.sh x35n -n   # 编译不支持 ZMK Studio 的固件
 
 SHIELD_NAME=$1
+NO_STUDIO=false
+
+# 检查是否传入 -n 参数
+if [ "$2" = "-n" ]; then
+    NO_STUDIO=true
+fi
 
 if [ -z "$SHIELD_NAME" ]; then
     echo "错误: 请指定键盘名"
-    echo "用法: ./build.sh 键盘名"
+    echo "用法: ./build.sh 键盘名 [-n]"
     echo "示例: ./build.sh x35n"
+    echo "示例: ./build.sh x35n -n"
     exit 1
 fi
 
@@ -17,7 +25,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SHIELD_PATH="$SCRIPT_DIR/$SHIELD_NAME"
 LINK_PATH="/workspaces/zmk/app/boards/shields/$SHIELD_NAME"
 BUILD_DIR="/workspaces/zmk/app/build_$SHIELD_NAME"
-OUTPUT_FILE="$SHIELD_PATH/${SHIELD_NAME}.uf2"
+
+# 根据参数决定文件名后缀
+if [ "$NO_STUDIO" = true ]; then
+    OUTPUT_FILE="$SHIELD_PATH/${SHIELD_NAME}_no_studio.uf2"
+else
+    OUTPUT_FILE="$SHIELD_PATH/${SHIELD_NAME}.uf2"
+fi
 
 if [ ! -d "$SHIELD_PATH" ]; then
     echo "错误: 找不到键盘文件夹 $SHIELD_PATH"
@@ -48,11 +62,23 @@ fi
 
 echo ""
 echo "=========================================="
-echo "开始编译: $SHIELD_NAME"
+if [ "$NO_STUDIO" = true ]; then
+    echo "开始编译: $SHIELD_NAME (不含 ZMK Studio 支持)"
+else
+    echo "开始编译: $SHIELD_NAME (含 ZMK Studio 支持)"
+fi
 echo "=========================================="
 
 cd /workspaces/zmk/app
-west build -d "$BUILD_DIR" -b nrfmicro/nrf52840/zmk -S studio-rpc-usb-uart -- -DSHIELD=$SHIELD_NAME -DCONFIG_ZMK_STUDIO=y
+
+# 构建编译命令
+if [ "$NO_STUDIO" = true ]; then
+    # 不支持 Studio：不加 -S 和 CONFIG_ZMK_STUDIO=y
+    west build -d "$BUILD_DIR" -b nrfmicro/nrf52840/zmk -- -DSHIELD=$SHIELD_NAME
+else
+    # 支持 Studio：加 snippet 和 CONFIG_ZMK_STUDIO=y
+    west build -d "$BUILD_DIR" -b nrfmicro/nrf52840/zmk -S studio-rpc-usb-uart -- -DSHIELD=$SHIELD_NAME -DCONFIG_ZMK_STUDIO=y
+fi
 
 if [ $? -ne 0 ]; then
     echo ""
