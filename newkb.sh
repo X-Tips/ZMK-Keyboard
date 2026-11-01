@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# 退回根目录运行下面命令: cd /workspaces/ZMK-Studio
 # 用法: bash newkb.sh <源键盘> <新键盘>
 # 示例: bash newkb.sh p61n p32n
 
