@@ -29,82 +29,82 @@
 
         default_layer {
             bindings = <
-            &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P
-            &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp ENTER
-            &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &lt 3 COMMA  &lt 4 DOT  &kp BSPC
-            &mt LCTRL ESC  &lt 1 SPACE  &kp LSHFT  &mt LALT TAB  &lt 2 SPACE  &mt LWIN DEL
+            &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                    &kp Y                 &kp U                 &kp I                 &kp O                 &kp P
+            &kp A                 &kp S                 &kp D                 &kp F                 &kp G                    &kp H                 &kp J                 &kp K                 &kp L                 &kp ENTER
+            &kp Z                 &kp X                 &kp C                 &kp V                 &kp B                    &kp N                 &kp M                 &lt 3 COMMA           &lt 4 DOT             &kp BSPC
+                                                        &mt LCTRL ESC         &lt 1 SPACE           &kp LSHFT                &mt LALT TAB          &lt 2 SPACE           &mt LWIN DEL
             >;
         };
 
         fn1_layer {
             bindings = <
-            &kp N7  &kp N8  &kp N9  &kp KP_DOT  &kp KP_PLUS  &kp KP_MULTIPLY  &kp DLLR  &kp COLON  &kp PIPE  &kp GRAVE
-            &kp N4  &kp N5  &kp N6  &kp N0  &kp KP_MINUS  &kp KP_SLASH  &kp HASH  &kp LBRC  &kp RBRC  &kp SEMI
-            &kp N1  &kp N2  &kp N3  &kp BSPC  &kp EQUAL  &kp BSLH  &kp AMPS  &kp LT  &kp GT  &kp SQT
-            &kp LCTRL  &to 0  &mt LSHFT KP_ENTER  &kp LALT  &kp LG(SPACE)  &kp LWIN
+            &kp N7                &kp N8                &kp N9                &kp KP_DOT            &kp KP_PLUS              &kp KP_MULTIPLY       &kp DLLR              &kp COLON             &kp PIPE              &kp GRAVE
+            &kp N4                &kp N5                &kp N6                &kp N0                &kp KP_MINUS             &kp KP_SLASH          &kp HASH              &kp LBRC              &kp RBRC              &kp SEMI
+            &kp N1                &kp N2                &kp N3                &kp BSPC              &kp EQUAL                &kp BSLH              &kp AMPS              &kp LT                &kp GT                &kp SQT
+                                                        &kp LCTRL             &to 0                 &mt LSHFT KP_ENTER       &kp LALT              &kp LG(SPACE)         &kp LWIN
             >;
         };
 
         fn2_layer {
             bindings = <
-            &kp TILDE  &kp PRCNT  &kp UNDER  &kp CARET  &kp PLUS  &kp STAR  &kp HOME  &kp UP  &kp END  &kp PG_UP
-            &kp AT  &kp DQT  &kp EXCL  &kp QMARK  &kp MINUS  &kp SLASH  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN
-            &kp LBKT  &kp RBKT  &kp LPAR  &kp RPAR  &kp EQUAL  &kp BSLH  &xtips  &kp ESC  &kp TAB  &kp DEL
-            &kp LCTRL  &kp CAPS  &kp LSHFT  &kp LALT  &to 0  &kp LWIN
+            &kp TILDE             &kp PRCNT             &kp UNDER             &kp CARET             &kp PLUS                 &kp STAR              &kp HOME              &kp UP                &kp END               &kp PG_UP
+            &kp AT                &kp DQT               &kp EXCL              &kp QMARK             &kp MINUS                &kp SLASH             &kp LEFT              &kp DOWN              &kp RIGHT             &kp PG_DN
+            &kp LBKT              &kp RBKT              &kp LPAR              &kp RPAR              &kp EQUAL                &kp BSLH              &xtips                &kp ESC               &kp TAB               &kp DEL
+                                                        &kp LCTRL             &kp CAPS              &kp LSHFT                &kp LALT              &to 0                 &kp LWIN
             >;
         };
 
         fn3_layer {
             bindings = <
-            &bt BT_SEL 0  &bt BT_SEL 3  &out OUT_USB  &kp C_VOL_DN  &kp C_VOL_UP  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-            &bt BT_SEL 1  &bt BT_SEL 4  &out OUT_BLE  &kp C_PREV  &kp C_NEXT  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-            &bt BT_SEL 2  &bt BT_CLR  &none  &kp C_MUTE  &kp C_PP  &kp F11  &kp F12  &to 0  &none  &none
-            &kp LCTRL  &rgb_ug RGB_TOG  &kp LSHFT  &kp LALT  &mo 5  &kp LWIN
+            &bt BT_SEL 0          &bt BT_SEL 3          &out OUT_USB          &kp C_VOL_DN          &kp C_VOL_UP             &kp F1                &kp F2                &kp F3                &kp F4                &kp F5
+            &bt BT_SEL 1          &bt BT_SEL 4          &out OUT_BLE          &kp C_PREV            &kp C_NEXT               &kp F6                &kp F7                &kp F8                &kp F9                &kp F10
+            &bt BT_SEL 2          &bt BT_CLR            &bt BT_CLR_ALL        &kp C_MUTE            &kp C_PP                 &kp F11               &kp F12               &to 0                 &none                 &none
+                                                        &kp LCTRL             &rgb_ug RGB_TOG       &kp LSHFT                &kp LALT              &mo 5                 &kp LWIN
             >;
         };
 
         fn4_layer {
             bindings = <
-            &kp PAUSE_BREAK  &kp LS(LC(LA(W)))  &kp LS(LC(LA(E)))  &kp LS(LC(LA(R)))  &kp LS(LC(LA(T)))  &kp LS(LC(LA(Y)))  &kp LS(LC(LA(U)))  &kp LS(LC(LA(I)))  &kp LS(LC(LA(O)))  &kp LS(LC(LA(P)))
-            &kp PSCRN  &kp LS(LC(LA(S)))  &kp LS(LC(LA(D)))  &kp LS(LC(LA(F)))  &kp LS(LC(LA(G)))  &kp LS(LC(LA(H)))  &kp LS(LC(LA(J)))  &kp LS(LC(LA(K)))  &kp LS(LC(LA(L)))  &kp LS(LC(LA(ENTER)))
-            &kp SLCK  &kp LS(LC(LA(X)))  &kp LS(LC(LA(C)))  &kp LS(LC(LA(V)))  &kp LS(LC(LA(B)))  &kp LS(LC(LA(N)))  &kp LS(LC(LA(M)))  &kp LS(LC(LA(COMMA)))  &to 0  &kp LS(LC(LA(BSPC)))
-            &kp LS(LC(LA(N1)))  &kp LS(LC(LA(N2)))  &kp LS(LC(LA(N3)))  &kp LS(LC(LA(N4)))  &kp LS(LC(LA(N5)))  &kp LS(LC(LA(N6)))
+            &kp PAUSE_BREAK       &kp LS(LC(LA(W)))     &kp LS(LC(LA(E)))     &kp LS(LC(LA(R)))     &kp LS(LC(LA(T)))        &kp LS(LC(LA(Y)))     &kp LS(LC(LA(U)))     &kp LS(LC(LA(I)))     &kp LS(LC(LA(O)))     &kp LS(LC(LA(P)))
+            &kp PSCRN             &kp LS(LC(LA(S)))     &kp LS(LC(LA(D)))     &kp LS(LC(LA(F)))     &kp LS(LC(LA(G)))        &kp LS(LC(LA(H)))     &kp LS(LC(LA(J)))     &kp LS(LC(LA(K)))     &kp LS(LC(LA(L)))     &kp LS(LC(LA(ENTER)))
+            &kp SLCK              &kp LS(LC(LA(X)))     &kp LS(LC(LA(C)))     &kp LS(LC(LA(V)))     &kp LS(LC(LA(B)))        &kp LS(LC(LA(N)))     &kp LS(LC(LA(M)))     &kp LS(LC(LA(COMMA))) &to 0                 &kp LS(LC(LA(BSPC)))
+                                                        &kp LS(LC(LA(N1)))    &kp LS(LC(LA(N2)))    &kp LS(LC(LA(N3)))       &kp LS(LC(LA(N4)))    &kp LS(LC(LA(N5)))    &kp LS(LC(LA(N6)))
             >;
         };
 
         fn5_layer {
             bindings = <
-            &kp LS(LC(LA(LG(Q))))  &kp LS(LC(LA(LG(W))))  &kp LS(LC(LA(LG(E))))  &kp LS(LC(LA(LG(R))))  &kp LS(LC(LA(LG(T))))  &kp LA(F4)  &kp LA(TAB)  &mkp LCLK  &kp RA(RG(UP))  &mkp RCLK
-            &kp LS(LC(LA(LG(A))))  &kp LS(LC(LA(LG(S))))  &kp LS(LC(LA(LG(D))))  &kp LS(LC(LA(LG(F))))  &kp LS(LC(LA(LG(G))))  &kp LC(W)  &kp LC(T)  &kp RA(RG(LEFT))  &kp RA(RG(DOWN))  &kp RA(RG(RIGHT))
-            &kp LS(LC(LA(LG(Z))))  &kp LS(LC(LA(LG(X))))  &kp LS(LC(LA(LG(C))))  &kp LS(LC(LA(LG(V))))  &kp LS(LC(LA(LG(B))))  &kp RC(RS(TAB))  &kp LC(TAB)  &mkp MB4  &mkp MB5  &mkp MB3
-            &kp LS(LC(LA(LG(1))))  &kp LS(LC(LA(LG(2))))  &kp LS(LC(LA(LG(3))))  &kp LS(LC(LA(LG(4))))  &kp LS(LC(LA(LG(5))))  &bootloader
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &out OUT_BLE          &none                 &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &bt BT_CLR_ALL        &none                 &none
+                                                        &none                 &none                 &none                    &none                 &none                 &bootloader
             >;
         };
 
         fn6_layer {
             bindings = <
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none  &none  &none  &none  &none  &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+                                                        &none                 &none                 &none                    &none                 &none                 &none
             >;
         };
 
         fn7_layer {
             bindings = <
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none  &none  &none  &none  &none  &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+                                                        &none                 &none                 &none                    &none                 &none                 &none
             >;
         };
 
         fn8_layer {
             bindings = <
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            &none  &none  &none  &none  &none  &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+            &none                 &none                 &none                 &none                 &none                    &none                 &none                 &none                 &none                 &none
+                                                        &none                 &none                 &none                    &none                 &none                 &none
             >;
         };
     };
